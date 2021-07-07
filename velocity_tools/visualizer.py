@@ -20,7 +20,7 @@ class Visualizer():
     star_ref = None
     zz = None
 
-    def __init__(self, v_lsr=7.5 *u.km/u.s, deltar = 10*u.au, Mstar=1 * u.Msun, omega0=1e-13 / u.s, theta0=45 * u.deg,
+    def __init__(self, v_lsr=7.5 *u.km/u.s, Mstar=1 * u.Msun, omega0=1e-13 / u.s, theta0=45 * u.deg,
                  phi0=0 * u.deg, v_r0=0 * u.km/u.s, r0=1000 * u.au,
                  inc=0 * u.deg, PA_ang =0 * u.deg, rmin_stream = 100*u.au):
         # initial params of the model
@@ -33,7 +33,6 @@ class Visualizer():
         self.r0 = r0
         self.inc = inc
         self.PA_ang = PA_ang
-        self.deltar = deltar
         self.rmin_stream = rmin_stream
 
         self.fig = plt.figure(figsize=(10,7))
@@ -121,7 +120,7 @@ class Visualizer():
                                                       theta0=self.theta0, phi0=self.phi0,
                                                       omega=self.omega0, v_r0=self.v_r0,
                                                       inc=self.inc, pa=self.PA_ang,
-                                                      deltar=self.deltar, rmin=self.rmin_stream)
+                                                      rmin=self.rmin_stream)
         # we save the spatial and velocity info
         self.x1 = x1
         self.y1 = y1
